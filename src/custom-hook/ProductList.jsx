@@ -19,6 +19,7 @@ fetch(url)
 })
 .catch((error)=>{
     setDisconnect(true)
+    setLoading(false)
 })
 
 
@@ -41,7 +42,7 @@ function ProductList(){
                 {disconnect ? <h1>Error in connection</h1>:<h1></h1>}
             </div>
             
-            { loading && !disconnect ?(<h1>Loading...</h1>):(products.map((item)=>(
+            { loading ?(<h1>Loading...</h1>):(products.map((item)=>(
                     <div key ={item.id}>
                         <h2>{item.title}</h2>
               <img src={item.image} alt="" />
