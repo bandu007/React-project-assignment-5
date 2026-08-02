@@ -9,12 +9,13 @@ const [products, setProduct] = useState([])
 const [loading, setLoading] = useState(true)
 const [disconnect,setDisconnect] = useState(false)
 useEffect(()=>{
-    console.log('fetching')
+    
 fetch(url)
 .then((response)=>(response.json()))
 .then((data)=>{
     setProduct(data)
     setLoading(false)
+    console.log('fetching')
 
 })
 .catch((error)=>{
