@@ -20,6 +20,8 @@ fetch(url)
 .catch((error)=>{
     setDisconnect(true)
     setLoading(false)
+    console.log("Catch executed");
+    console.log(error);
 })
 
 
